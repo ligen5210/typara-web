@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Typara</title>
+<style>body{font-family:-apple-system,Roboto,sans-serif;margin:0;display:flex;min-height:100vh;align-items:center;justify-content:center;background:#0E0F13;color:#F2F4F8;text-align:center}
+main{max-width:32rem;padding:2rem}h1{font-size:2rem}.btn{display:inline-block;margin:.4rem;padding:.9rem 1.6rem;border-radius:12px;background:#5A46E8;color:#fff;text-decoration:none;font-weight:600}
+p{color:#A9B0BF}.fine{font-size:.8rem;color:#6E7484}a{color:#8B7BFF}</style></head>
+<body><main>
+<h1>Typara</h1>
+<p id="msg">Discover your type — a rational personality insight.</p>
+<p><a class="btn" id="ios" href="#">App Store</a> <a class="btn" id="android" href="#">Google Play</a></p>
+<p class="fine">For entertainment purposes only. 18+ only.<br>
+<a href="/privacy.html">Privacy Policy</a> · <a href="/tos.html">Terms of Service</a></p>
+<script>
+(function(){var m=location.pathname.match(/\/r\/([A-Za-z0-9]{4,16})/);
+var a=document.getElementById('android');
+if(m){a.href='MARKET_REFERRER_BASE?c='+encodeURIComponent(m[1]);
+document.getElementById('msg').textContent='Your friend shared a personality insight with you. Get Typara to see yours.';}})();
+</script>
+</main></body></html>
