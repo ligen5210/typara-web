@@ -3,18 +3,29 @@
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Typara</title>
 <style>body{font-family:-apple-system,Roboto,sans-serif;margin:0;display:flex;min-height:100vh;align-items:center;justify-content:center;background:#0E0F13;color:#F2F4F8;text-align:center}
-main{max-width:32rem;padding:2rem}h1{font-size:2rem}.btn{display:inline-block;margin:.4rem;padding:.9rem 1.6rem;border-radius:12px;background:#5A46E8;color:#fff;text-decoration:none;font-weight:600}
-p{color:#A9B0BF}.fine{font-size:.8rem;color:#6E7484}a{color:#8B7BFF}</style></head>
+main{max-width:32rem;width:100%;box-sizing:border-box;padding:2rem}h1{font-size:2rem}h2{font-size:1.35rem;line-height:1.4;margin:0 0 .6em}.btn{display:inline-block;margin:.4rem;padding:.9rem 1.6rem;border-radius:12px;background:#5A46E8;color:#fff;text-decoration:none;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid #3A3E4A;color:#F2F4F8}
+p{color:#A9B0BF;line-height:1.55}.fine{font-size:.8rem;color:#6E7484}a{color:#8B7BFF}
+#invite{display:none}.invite #invite{display:block}.invite #nf{display:none}</style>
+<script>
+(function(){if(/^\/r\/.+$/.test(location.pathname)){document.documentElement.className+=' invite';
+document.title='Typara — 你朋友分享的类型速写';}})();
+</script></head>
 <body><main>
+<div id="nf">
 <h1>Typara</h1>
 <p id="msg">Discover your type — a rational personality insight.</p>
 <p><a class="btn" id="ios" href="#">App Store</a> <a class="btn" id="android" href="#">Google Play</a></p>
+</div>
+<div id="invite">
+<h2>你的朋友用 Typara 做了一份类型速写</h2>
+<p>Typara 是基于你自己的照片与回答的理性自我评估工具，仅供娱乐与自我认知。</p>
+<p><a class="btn" id="play" href="https://play.google.com/store/apps/details?id=store.libot.typara">在 Google Play 下载</a> <a class="btn ghost" href="/">先了解更多</a></p>
+</div>
 <p class="fine">For entertainment purposes only. 18+ only.<br>
 <a href="/privacy.html">Privacy Policy</a> · <a href="/tos.html">Terms of Service</a></p>
 <script>
-(function(){var m=location.pathname.match(/\/r\/([A-Za-z0-9]{4,16})/);
-var a=document.getElementById('android');
-if(m){a.href='MARKET_REFERRER_BASE?c='+encodeURIComponent(m[1]);
-document.getElementById('msg').textContent='Your friend shared a personality insight with you. Get Typara to see yours.';}})();
+(function(){var m=location.pathname.match(/^\/r\/(.+)$/);
+if(m){document.getElementById('invite').setAttribute('data-shortcode',m[1]);}})();
 </script>
 </main></body></html>
